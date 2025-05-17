@@ -8,9 +8,15 @@ This project predicts annual insurance premiums using machine learning technique
 - Regression models: Linear, Ridge, XGBoost
 - Model evaluation using MSE/RMSE
 - Post-hoc analysis of prediction errors
+- Subgroup-specific model for users aged 25 or below
+- Live prediction app using Streamlit
 
 ### Best Model:
 - **XGBoost** (RMSE: ~1250)
 
+### Special Insights:
+- Majority of large errors occurred for users <25 years
+- Suggested use of a subgroup model for this segment
+
 ### Tools:
-- Python, Pandas, Scikit-learn, XGBoost, Matplotlib, Seaborn, Streamlit
+- Python, Pandas, Scikit-learn, XGBoost, Matplotlib, Seaborn, Streamlit, joblib
