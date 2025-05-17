@@ -22,4 +22,4 @@ This project predicts annual insurance premiums using machine learning technique
 - Python, Pandas, Scikit-learn, XGBoost, Matplotlib, Seaborn, Streamlit, joblib
 
 
-Streamlit app - https://healthcarepremiumpredictionweb.streamlit.app
+ [https://healthcarepremiumpredictionweb.streamlit.app](https://healthcarepremiumpredictions.streamlit.app)
