@@ -107,7 +107,6 @@ def handle_scaling(age, df):
     df.drop('income_level', axis='columns', inplace=True)
 
     return df
-
 def predict(input_dict):
     input_df = preprocess_input(input_dict)
 
@@ -116,4 +115,17 @@ def predict(input_dict):
     else:
         prediction = model_rest.predict(input_df)
 
-    return int(prediction[0])
+    # Get back risk score and recommendation
+    normalized_risk_score = input_df['normalized_risk_score'].values[0]
+    recommended_plan = recommend_plan(prediction[0], normalized_risk_score)
+
+    return int(prediction[0]), recommended_plan
+
+def recommend_plan(predicted_premium, normalized_risk_score):
+    if predicted_premium >= 30000 and normalized_risk_score < 0.3:
+        return "Silver"
+    elif predicted_premium < 20000 and normalized_risk_score > 0.5:
+        return "Gold"
+    else:
+        return "Bronze" 
+    
