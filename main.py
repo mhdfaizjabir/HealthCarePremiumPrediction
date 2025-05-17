@@ -70,8 +70,9 @@ input_dict = {
     'Region': region,
     'Medical History': medical_history
 }
-
 # Button to make prediction
 if st.button('Predict'):
-    prediction = predict(input_dict)
-    st.success(f'Predicted Health Insurance Cost: {prediction}')
+    predicted_premium, suggested_plan = predict(input_dict)
+
+    st.success(f"Predicted Health Insurance Cost: {predicted_premium}")
+    st.info(f"Recommended Insurance Plan: {suggested_plan}")
